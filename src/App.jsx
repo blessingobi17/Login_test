@@ -12,7 +12,7 @@ export default function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/login', form);
+    await axios.post(`${import.meta.env.VITE_API_BASE_URL}/login`, form);
     alert('Login sent to server!');
   };
 
@@ -36,7 +36,7 @@ export default function App() {
           onChange={handleChange}
           required
         />
-        <button className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+        <button className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 cursor-pointer ">
           Submit
         </button>
       </form>

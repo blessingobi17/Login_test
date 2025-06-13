@@ -4,13 +4,15 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://your-frontend-url.netlify.app' 
+  }));
+  
 app.use(express.json());
 
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
-  // Setup email transport
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -35,5 +37,5 @@ app.post('/login', async (req, res) => {
   }
 });
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
