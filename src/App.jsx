@@ -12,7 +12,7 @@ export default function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post(`${import.meta.env.VITE_API_BASE_URL}/login`, form);
+    await axios.post('https://login-backend-w8d5.onrender.com/login', form);
     alert('Login sent to server!');
   };
 
