@@ -4,7 +4,9 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://logintestt.netlify.app'
+  }));
 app.use(express.json());
 
 app.post('/login', async (req, res) => {
