@@ -5,8 +5,11 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-    origin: 'https://logintestt.netlify.app'
+    origin: ['https://logintestt.netlify.app'],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
   }));
+  
 app.use(express.json());
 
 app.post('/login', async (req, res) => {
