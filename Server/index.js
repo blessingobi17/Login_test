@@ -4,10 +4,12 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
+const allowedOrigins = ['https://logintestt.netlify.app', 'http://localhost:5173'];
 app.use(cors({
-    origin: ['https://logintestt.netlify.app'],
+    origin: allowedOrigins,
     methods: ['GET', 'POST', 'OPTIONS'],
-    allowedHeaders: ['Content-Type']
+    allowedHeaders: ['Content-Type'],
+    credentials: true
   }));
   
 app.use(express.json());

