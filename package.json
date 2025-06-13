@@ -2,7 +2,6 @@
   "name": "login",
   "private": true,
   "version": "0.0.0",
-  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,12 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.10",
+    "@tailwindcss/postcss": "^4.1.10",
     "axios": "^1.9.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "nodemailer": "^7.0.3",
+    "postcss": "^8.5.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.10"
