@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-96">
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg lg:w-96 w-full">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <input
           className="w-full mb-4 p-2 border rounded"
